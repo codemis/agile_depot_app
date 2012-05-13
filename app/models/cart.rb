@@ -1,3 +1,5 @@
 class Cart < ActiveRecord::Base
-  # attr_accessible :title, :body
+	# relationships
+	#
+	has_many :line_items, dependent: :destroy
 end
