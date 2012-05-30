@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* START_HIGHLIGHT */
-.carts {
+.carts, #side #cart {
+/* END_HIGHLIGHT */
   .cart_title {
     font: 120% bold;
   }
@@ -17,4 +18,3 @@
     border-top: 1px solid #595;
   }
 }
-/* END_HIGHLIGHT */
