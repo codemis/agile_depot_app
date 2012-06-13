@@ -1,11 +1,17 @@
 Depot::Application.routes.draw do
+  resources :orders
+
   resources :line_items
 
   resources :carts
 
   get "store/index"
 
-  resources :products
+  resources :products do
+		# on member gives us a url like products/1/who_bought.atom
+		get :who_bought, on: :member
+	end
+	
   root :to => 'store#index', as: 'store'
 
   # The priority is based upon order of creation:

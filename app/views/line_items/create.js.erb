@@ -1,3 +1,5 @@
+$('#notice').hide();
+
 $('#cart').html("<%=j render @cart %>");
 
 if($('#cart').css('display') == 'none') {$('#cart').show('blind', 1000);};
