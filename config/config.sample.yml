@@ -1,0 +1,8 @@
+development:
+  gmail:
+    user_name: joe
+    password: secret
+production:
+  gmail:
+    user_name: joe
+    password: secret
