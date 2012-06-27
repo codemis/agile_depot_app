@@ -1,5 +1,6 @@
 class StoreController < ApplicationController
-  
+  skip_before_filter :authorize
+
 	# List a catalog of the products
 	#
 	def index
