@@ -6,23 +6,19 @@ Depot::Application.routes.draw do
 		post 'login' => :create
 		delete 'logout' => :destroy
 	end
-
-  resources :users
-
-  resources :orders
-
-  resources :line_items
-
-  resources :carts
-
-  get "store/index"
-
-  resources :products do
-		# on member gives us a url like products/1/who_bought.atom
-		get :who_bought, on: :member
-	end
 	
-  root :to => 'store#index', as: 'store'
+	scope '(:locale)' do
+		resources :users
+	  resources :orders
+	  resources :line_items
+	  resources :carts
+		resources :products do
+			# on member gives us a url like products/1/who_bought.atom
+			get :who_bought, on: :member
+		end
+		get "store/index"
+		root :to => 'store#index', as: 'store'
+	end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
